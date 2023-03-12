@@ -243,6 +243,14 @@ void ScriptMgr::OnUnitDeath(Unit* unit, Unit* killer)
     });
 }
 
+void ScriptMgr::BeforeSendHeal(Unit* unit, HealInfo* healInfo)
+{
+    ExecuteScript<UnitScript>([&](UnitScript* script)
+    {
+        script->BeforeSendHeal(unit, healInfo);
+    });
+}
+
 void ScriptMgr::OnAuraApply(Unit* unit, Aura* aura)
 {
     ExecuteScript<UnitScript>([&](UnitScript* script)

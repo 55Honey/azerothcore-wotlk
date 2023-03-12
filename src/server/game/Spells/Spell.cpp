@@ -2795,6 +2795,7 @@ void Spell::DoAllEffectOnTarget(TargetInfo* target)
         if (canEffectTrigger)
             Unit::ProcDamageAndSpell(caster, unitTarget, procAttacker, procVictim, procEx, addhealth, m_attackType, m_spellInfo, m_triggeredByAuraSpell.spellInfo,
                 m_triggeredByAuraSpell.effectIndex, this, nullptr, &healInfo);
+        //sScriptMgr->BeforeSendHeal(caster, &healInfo);
     }
     // Do damage and triggers
     else if (m_damage > 0)

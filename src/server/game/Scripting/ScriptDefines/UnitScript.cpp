@@ -243,11 +243,11 @@ void ScriptMgr::OnUnitDeath(Unit* unit, Unit* killer)
     });
 }
 
-void ScriptMgr::BeforeSendHeal(Unit* unit, HealInfo* healInfo)
+void ScriptMgr::BeforeSendNonMeleeDamage(Unit* caster, SpellNonMeleeDamage* log)
 {
     ExecuteScript<UnitScript>([&](UnitScript* script)
     {
-        script->BeforeSendHeal(unit, healInfo);
+        script->BeforeSendNonMeleeDamage(caster, log);
     });
 }
 
